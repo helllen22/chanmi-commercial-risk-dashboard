@@ -1,0 +1,11 @@
+# 가상환경
+.venv/
+venv/
+
+# 노트북 임시 파일
+.ipynb_checkpoints/
+__pycache__/
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
