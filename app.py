@@ -975,7 +975,7 @@ html body .st-key-slide_overview {
         align-items: stretch !important;
     }
 
-    html body .st-key-slide_overview [data-testid="column"] {
+    html body .st-key-slide_overview [data-testid="stColumn"] {
         width: 100% !important;
         flex: 1 1 auto !important;
     }
