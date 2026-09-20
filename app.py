@@ -968,12 +968,30 @@ html body .st-key-slide_overview {
 }
 
 @media (max-width: 1100px) {
+    /* 좁은 데스크톱에서는 종합 현황의 3열 구성을 세로로 쌓아
+       지도·범례와 다음 제목이 화면 밖으로 밀리지 않게 한다. */
+    html body .st-key-slide_overview [data-testid="stHorizontalBlock"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    html body .st-key-slide_overview [data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 auto !important;
+    }
+
     html body .st-key-slide_overview .kpi-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 
     html body .st-key-slide_overview .kpi-card {
         min-height: 148px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    html body .st-key-slide_overview .kpi-grid {
+        grid-template-columns: 1fr !important;
     }
 }
 
