@@ -913,6 +913,70 @@ html body
     }
 }
 
+/* 종합 현황의 콘텐츠 높이를 실제 내용에 맞춤.
+   좁은 왼쪽 열에서 정사각형 비율과 뷰포트 고정 높이가 함께 적용되면
+   KPI 설명과 다음 섹션이 겹치므로 이 화면에 한해 두 제약을 해제한다. */
+html body .st-key-slide_overview .kpi-card {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 176px !important;
+    padding: 18px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+html body .st-key-slide_overview .kpi-value {
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.08 !important;
+    white-space: nowrap;
+}
+
+html body .st-key-slide_overview .kpi-unit {
+    font-size: clamp(14px, 1.3vw, 19px) !important;
+}
+
+html body .st-key-slide_overview .kpi-label,
+html body .st-key-slide_overview .kpi-note {
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: anywhere !important;
+}
+
+html body .st-key-slide_overview .kpi-note {
+    margin-top: 12px !important;
+}
+
+html body .st-key-slide_overview [data-testid="stCaptionContainer"] {
+    margin: 4px 0 18px !important;
+    line-height: 1.65 !important;
+    white-space: normal !important;
+}
+
+html body .st-key-slide_overview {
+    padding-bottom: 44px !important;
+}
+
+@media (min-width: 1200px) and (min-height: 740px) {
+    html body
+    [data-testid="stLayoutWrapper"]:has(.st-key-slide_overview) {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    html body .st-key-slide_overview .kpi-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body .st-key-slide_overview .kpi-card {
+        min-height: 148px !important;
+    }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
